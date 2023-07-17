@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import { LoginPage } from './assets/Pages/LoginPage/LoginPage.jsx'
+import { HomePage } from './assets/Pages/HomePage/HomePage.jsx'
+import { CriarContaPage } from './assets/Pages/CriarContaPage/CriarContaPage.jsx'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>App.jsx tá on!</h1>
-    </>
+
+    <Router>
+      <Routes>
+
+          <Route path='/' element={<LoginPage/>}/>
+          <Route path='/home' element={<HomePage/>}/>
+          <Route path='/criarConta' element={<CriarContaPage/>}/>
+
+       </Routes>
+    </Router>
   )
 }
 
