@@ -1,5 +1,5 @@
 import { FormLoginComponent } from "../../Components/Form/Login/LoginComponent";
-import { useNavigate } from 'react-router-dom';
+/* import { useNavigate } from 'react-router-dom'; */
 
 
 import * as Styled from './LoginPage.style';
@@ -16,7 +16,7 @@ export const LoginPage = () => {
 
       <Styled.ContainerLogin>
           <Styled.ImageLogin src={imagemLogin} />
-          <Styled.BarraCentral></Styled.BarraCentral>
+          <Styled.BarraCentral/>
 
           <Styled.DivCriarConta>
             <Styled.LabelCriarConta>Não possui uma conta?</Styled.LabelCriarConta>
@@ -24,7 +24,7 @@ export const LoginPage = () => {
           </Styled.DivCriarConta>
 
           <Styled.Login>
-            <FormLoginComponent />
+            <FormLoginComponent/>
           </Styled.Login>
 
       </Styled.ContainerLogin>

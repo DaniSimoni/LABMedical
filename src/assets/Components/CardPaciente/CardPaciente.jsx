@@ -1,11 +1,13 @@
 import * as Styled from './CardPaciente.style';
+/* import  LogoTeste  from '../../../../public/images/logoteste.jpg'
+ */
+/* import { ImUsers } from 'react-icons/im'; */
+import { ImUsers } from 'react-icons/im';
 
-import { ImUsers } from 'react-icons/Im';
 
+const CardPaciente =  ({Icon}) => {
 
-function CardPaciente ()  {
-
-        const dataCardPaciente = [
+/*         const dataCardPaciente = [
         {
         id:'1',
         icone: '',
@@ -33,17 +35,15 @@ function CardPaciente ()  {
         plano: '',
       },
 
-      ]
+      ] */
 
   return (
     <>
       <Styled.CardPacienteContainer>
         <Styled.RenderCardPaciente>
-             <Styled.IconCardPaciente>
-                {/* {dataCardPaciente.icone || <img src={ImUsers}></img>} */}
+             <Styled.IconCardPaciente Icon={ImUsers}/>
+
          
-             {/*    <img src={ImUsers}></img> */}
-             </Styled.IconCardPaciente>
         </Styled.RenderCardPaciente>
       </Styled.CardPacienteContainer>
 

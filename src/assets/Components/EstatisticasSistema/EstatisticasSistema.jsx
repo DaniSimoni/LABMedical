@@ -10,22 +10,22 @@ function EstatisticasSistema() {
         {
         id:'1',
         icone: ImUsers,   
-        resultado: 'sdfsdfsdfsd',
-        legenda: 'sdfsdfd',
+        resultado: '01',
+        legenda: 'Pacientes',
 
       },
         {
         id:'2',
-        icone: '',   
-        resultado: 'ESTATÍSTICAS E INFORMAÇÕES',
-        legenda: '',
+        icone: ImUsers,   
+        resultado: '02',
+        legenda: 'Consultas',
 
       },
         {
         id:'3',
         icone: '',   
-        resultado: 'ESTATÍSTICAS E INFORMAÇÕES',
-        legenda: '',
+        resultado: '03',
+        legenda: 'Exames',
       },
 
       ]
@@ -37,7 +37,7 @@ function EstatisticasSistema() {
         <h2>Estatísticas do Sistema</h2> 
 
         <Styled.ContainerCardEstatisticas>
-       { dataCard.map(estatistica => <CardEstatistica key={estatistica.id} dataCard={estatistica}/>)}
+            { dataCard.map(estatistica => <CardEstatistica key={estatistica.id} dataCard={estatistica}/>)}
         </Styled.ContainerCardEstatisticas>
 
    </Styled.ContainerEstatisticas>

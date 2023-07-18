@@ -81,7 +81,7 @@ export const DivCriarConta = styled.div`
 export const BarraCentral = styled.div`
     display: flex;
     justify-content: center !important;
-    width: .25vw;
+    width: .75vw;
     height: 100vh;
     background: #4682B4;
     margin-left: 10vw;
