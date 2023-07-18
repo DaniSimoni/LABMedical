@@ -28,11 +28,11 @@ export const FormLoginComponent = () => {
     })
   }
 
-  const submitForm = (data) => {
+  const submitForm = async (data) => {
     const { email, password } = data;
 
     /* const user = users.find(u => u.email === email); */
-    const user = UserService.ShowByEmail(email)
+    const user = await UserService.ShowByEmail(email);  
 
     if(!user) {
       alert('Usuário não cadastrado');
