@@ -1,34 +1,14 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useContext} from 'react'
+import { useContext} from 'react';
 
 import { InputComponent } from '../InputComponent/InputComponent';
 import * as Styled from './LoginComponent.style';
 import { AuthContext } from '../../../Context/Auth/auth.context';
+import { UserService } from '../../../../Service/User/User.service';
 
 export const FormLoginComponent = () => {
-  const users = [
-    {
-      id: 1,
-      email: 'eu@eu.com',
-      password: '12345678'
-    },
-    {
-      id: 2,
-      email: 'tu@tu.com',
-      password: '98765432'
-    },
-    {
-      id: 3,
-      email: 'ele@ele.com',
-      password: '12457896'
-    },
-    {
-      id: 4,
-      email: 'ela@ela.com',
-      password: '12345678'
-    },
-  ]
+
 
   const {
     register,
@@ -41,10 +21,18 @@ export const FormLoginComponent = () => {
 
   const { setAuth } = useContext(AuthContext)
 
+  const createUser = () => {
+    UserService.Create({
+     email: '',
+     password: '', 
+    })
+  }
+
   const submitForm = (data) => {
     const { email, password } = data;
 
-    const user = users.find(u => u.email === email);
+    /* const user = users.find(u => u.email === email); */
+    const user = UserService.ShowByEmail(email)
 
     if(!user) {
       alert('Usuário não cadastrado');
