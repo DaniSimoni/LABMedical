@@ -7,26 +7,7 @@ import { LocalStorageService } from './Service/User/LocalStorage.server.jsx'
 
   if(!LocalStorageService.get('users')) {
       LocalStorageService.set('users', [
-        {
-          id: 1,
-          email: 'adm@labmedical.com',
-          password: '12345678'
-        },
-        {
-          id: 2,
-          email: 'comercial@labmedical.com',
-          password: '98765432'
-        },
-        {
-          id: 3,
-          email: 'ele@labmedical.com',
-          password: '12457896'
-        },
-        {
-          id: 4,
-          email: 'ela@labmedical.com',
-          password: '12345678'
-        },
+        
       ])
   }
 
