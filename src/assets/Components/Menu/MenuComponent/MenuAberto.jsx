@@ -10,9 +10,6 @@ import {
   FaTasks,
 } from 'react-icons/fa';
 
-
-
-
 const MenuAberto = () => {
 
     return (
@@ -23,14 +20,14 @@ const MenuAberto = () => {
               <Styled.MenuArea>
             <Styled.MenuLogo src={'../../../../public/images/LABMedical_Logo.png'}/>
 
-            <MenuItem Icon={FaHome} Text="INICIO" />
-            <MenuItem Icon={FaSignInAlt} Text="SAIR" />
+            <MenuItem Icon={FaHome} Text="INICIO" To='/'/>
+            <MenuItem Icon={FaSignInAlt} Text="SAIR" To='/login' />
 
-            <MenuItem Icon={FaPlus} Text="CADASTRAR" />
+            <MenuItem Icon={FaPlus} Text="CADASTRAR" To='/paciente' />
             <MenuItem Icon={FaTasks} Text="LIMPAR PRONTUÁRIO" />
 
-            <MenuItem Icon={FaPlus} Text="CADASTRAR CONSULTA" />
-            <MenuItem Icon={FaPlus} Text="CADASTRAR EXAME" />
+            <MenuItem Icon={FaPlus} Text="CADASTRAR CONSULTA" To='/consulta' />
+            <MenuItem Icon={FaPlus} Text="CADASTRAR EXAME" To='/exame' />
         </Styled.MenuArea>
 
 

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   display: flex;
   align-items: center;
   background-color: #1A202C; 
@@ -14,6 +15,7 @@ export const Container = styled.div`
   border: 1px solid white;
   background-color: transparent;
   width: 17vw;
+  text-decoration: none;
 
   > svg {
     margin: 0 20px;

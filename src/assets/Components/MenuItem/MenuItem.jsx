@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container } from './MenuItem.style'
 
-const MenuItem = ({ Icon, Text }) => {
+const MenuItem = ({ Icon, Text, To }) => {
   return (
-    <Container>
+    <Container to={To}>
       <Icon />
       {Text}
     </Container>
