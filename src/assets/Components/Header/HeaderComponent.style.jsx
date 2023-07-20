@@ -6,9 +6,9 @@ export const Container = styled.div`
 
   background-color: #4682B4; 
   box-shadow: 0 0 20px 3px;
-  position: fixed;
-  width:80vw;
-  margin-left: 20em;
+  position: absolute;
+  width: 100vw;
+  margin-left: 10em;
   color: white;
 
 `;
@@ -18,7 +18,7 @@ export const UserHeader = styled.div`
     display: flex;
     align-items: center;
     width: 12rem;
-    margin-left: 1vw;
+    margin-left: 0vw;
     padding: 0;
     justify-content: right;
 
@@ -40,9 +40,10 @@ export const TxtHeader = styled.h3`
     display: flex;
     justify-content: left;
     width: 60vw;
-    margin: 0;
+    margin: .5vw 0 0 17vw;
     padding-left: 2vw;
     align-items: center;
+
 `
 
 export const TxtUser = styled.h6`

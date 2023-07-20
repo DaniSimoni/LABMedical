@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
          <App/>
       </AuthProvider>
     </HeaderProvider>
-    <CardPaciente/>
+{/*     <CardPaciente/> */}
 
    
   </React.StrictMode>,

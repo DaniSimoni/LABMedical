@@ -1,7 +1,7 @@
 import * as Styled from './CardPaciente.style';
 /* import  LogoTeste  from '../../../../public/images/logoteste.jpg'
  */
-/* import { ImUsers } from 'react-icons/im'; */
+
 import { ImUsers } from 'react-icons/im';
 
 
@@ -41,7 +41,7 @@ const CardPaciente =  ({Icon}) => {
     <>
       <Styled.CardPacienteContainer>
         <Styled.RenderCardPaciente>
-             <Styled.IconCardPaciente Icon={ImUsers}/>
+             <Styled.IconCardPaciente Icon={<ImUsers/>}/>
 
          
         </Styled.RenderCardPaciente>

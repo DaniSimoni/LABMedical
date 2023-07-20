@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 
 export const ContainerEstatisticas = styled.div`
-    width: 60vw;
+    width: 70vw;
     box-shadow: none;
     position: fixed;
-    margin: 5vw 0 0 25vw;
+    margin: 5vw 0;
     color: gray;
+
 `
 
 export const ContainerCardEstatisticas = styled.div`

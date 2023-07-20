@@ -1,7 +1,7 @@
 import CardEstatistica from '../CardEstatistica/CardEstatistica';
 import * as Styled from './EstatisticasSistema.style';
 import React from 'react';
-import { ImUsers } from 'react-icons/im';
+import { ImUsers, ImCalendar, ImDroplet } from 'react-icons/im';
 
 
 function EstatisticasSistema() {
@@ -9,21 +9,21 @@ function EstatisticasSistema() {
     const dataCard = [
         {
         id:'1',
-        icone: ImUsers,   
+        icone: <ImUsers/>,   
         resultado: '01',
         legenda: 'Pacientes',
 
       },
         {
         id:'2',
-        icone: ImUsers,   
+        icone: <ImCalendar/>,
         resultado: '02',
         legenda: 'Consultas',
 
       },
         {
         id:'3',
-        icone: '',   
+        icone: <ImDroplet/>,   
         resultado: '03',
         legenda: 'Exames',
       },

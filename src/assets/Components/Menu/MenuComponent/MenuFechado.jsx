@@ -1,22 +1,17 @@
 import * as Styled from './MenuComponent.style';
-import React  from 'react'
-import { Switch } from 'antd';
+import React from 'react'
 
-export const MenuComponent = () => {
-    const onChange = (checked) => {
-        console.log(`switch to ${checked}`);
-      };
-    
-      const [menu, setMenu] = useState(false)
-    
-      const showMenu = () => setMenu(!menu)
+
+const MenuFechado = () => {
+   
 
     return (
         <>
-     <Styled.MenuFooter>Encolher Menu          
-              <Switch defaultChecked onClick={showMenu} onChange={onChange}/>{menu && <MenuComponent active={setMenu} />}
-    </Styled.MenuFooter>
-                                      
+            <Styled.MenuFechado>
+                <Styled.MenuLogoFechado src={'../../../../public/images/LABMedical_Logo.png'} />
+            </Styled.MenuFechado>
         </>
     )
 }
+
+export default MenuFechado

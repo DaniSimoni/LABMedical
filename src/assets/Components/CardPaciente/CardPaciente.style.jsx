@@ -7,7 +7,7 @@ export const CardPacienteContainer = styled.div`
 
     position: absolute;
 
-    margin: 30vw auto 0 25vw;
+    margin: 32vw auto 0 0vw;
 `
 
 export const RenderCardPaciente = styled.div`
@@ -27,7 +27,7 @@ export const IconCardPaciente = styled.img`
     border-radius: 100%;
     margin: 1vw auto;
     border: 2px solid black;
-    background-image: url(ImUsers);
+    background-image: url(<ImUsers/>);
     background-color: white;
 
 /*     span{

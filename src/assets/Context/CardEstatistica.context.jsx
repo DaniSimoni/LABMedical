@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 export const CardEstatisticaContext = createContext({
     dataCard: {
-        icone: 'ImUser',
+        icone: '',
         resultado: '0',
         legenda: 'Aguarde...',
     },
@@ -13,7 +13,7 @@ export const CardEstatisticaContext = createContext({
 
 export const CardEstatisticaProvider = ({ children }) => {
     const [dataCard, setDataCard] = useState({
-        icone: 'ImUser',
+        icone: '',
         resultado: '0',
         legenda: 'Aguarde...',
        
