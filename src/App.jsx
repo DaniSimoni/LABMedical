@@ -21,7 +21,8 @@ function App() {
               <Route path='/consulta' element={<ConsultaPage/>}/>
               <Route path='/exame' element={<ExamePage/>}/>
               <Route path='/listaProntuarios' element={<ListaProntuarioPage/>}/>
-              <Route path='/prontuarios' element={<ProntuarioPage/>}/>
+            {/*   <Route path='/prontuarios' element={<ProntuarioPage/>}/> */}
+              <Route path='/prontuarios/:id' element={<ProntuarioPage/>}/>
           </Route>
           <Route path='*' element={<><p>Essa página não existe</p></>}/>
        </Routes>

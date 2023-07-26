@@ -20,7 +20,7 @@ const CardProntuario = ({ paciente }) => {
            
 
             <Styled.Arrow>
-            <Link to={'/prontuarios'}><ImArrowRight2/> </Link>
+            <Link to={`/prontuarios/${paciente.id}`}><ImArrowRight2/> </Link>
             </Styled.Arrow>
 
            </Styled.DadosPaciente>

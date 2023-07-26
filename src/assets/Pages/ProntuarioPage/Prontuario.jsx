@@ -1,47 +1,49 @@
 import * as Styled from './Prontuario.style'
 
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { HeaderContext } from '../../Context/Header.context';
 
+import { useLocation } from 'react-router-dom';
 
+import { PacienteService } from '../../../Service/User/Paciente.service';
 import { ConsultaService } from '../../../../src/Service/User/Consulta.service';
 import { ExameService } from '../../../../src/Service/User/Exame.service';
 
+import CardConsulta from '../../Components/CardConsulta/CardConsulta';
 
-export const ProntuarioPage = ({paciente}) => {
+import CardExame from '../../Components/CardExame/CardExame';
+
+export const ProntuarioPage = () => {
+
+
+  const [paciente, setPaciente] = useState()
+  const [consulta, setConsulta] = useState()
+  const [exame, setExame] = useState()
   
+
   const { setData } = useContext(HeaderContext)
+  const {pathname} = useLocation()
+
   useEffect(() => {
     setData({       
       titulo: 'LISTAGEM DE PRONTUÁRIOS',}) 
+      const location = pathname.split('/')
+      const pacienteId = location[location.length - 1]
+      const consultaId = location[location.consulta]
+      const exameId = location[location.exame]
       
+      const asyncFn = async () => {
+        await PacienteService.Show(pacienteId).then(async (response)  => {
+          setPaciente(response)
+          await ConsultaService.Get().then(res => setConsulta(res.filter(cc => cc.pacienteId === response.id)))
+          await ExameService.Get().then(res => setExame(res.filter(e => e.pacienteId === response.id)))
+        })
+
+        
+      }
+      asyncFn()
     }, []);
-    
 
-
-  const buscaConsulta = async(consultaData) => {
-
-  const dataConsuta = {...consultaData, pacienteId: paciente.id}
-  const consulta = await ConsultaService.Get(data);
-  if (!consulta) {
-    reset();
-
-  } else {
-    console.log('Erro na busca da consulta')
-  }
-}
-
-const buscaExame = async(exameData) => {
-
-  const dataExame = {...exameData, pacienteId: paciente.id}
-  const exame = await ExameService.Get(data);
-  if (!exame) {
-    reset();
-
-  } else {
-    console.log('Erro na busca do Exame')
-  }
-}
   
 
     const render = () => {
@@ -51,10 +53,10 @@ const buscaExame = async(exameData) => {
           
             <Styled.Prontuario>
             <Styled.HeaderProntuario>
-              <Styled.Title>Nome do Paciente {paciente.nome}</Styled.Title>
-              <Styled.Label>Convênio: </Styled.Label>
-              <Styled.Label>Alergias: </Styled.Label>
-              <Styled.Label>Cuidados Específicos: </Styled.Label>
+              <Styled.Title>Nome do Paciente {paciente?.nome}</Styled.Title>
+              <Styled.Label>Convênio: {paciente?.convenio}</Styled.Label>
+              <Styled.Label>Nacimento: {paciente?.nasc}</Styled.Label>
+              <Styled.Label>Contato: {paciente?.tel}</Styled.Label>
 
             </Styled.HeaderProntuario>
 
@@ -63,22 +65,23 @@ const buscaExame = async(exameData) => {
             <Styled.SubTitle>Consulta</Styled.SubTitle>
 
               <Styled.RenderResultados>
-              {pacienteEncontrado && (
-              <FormExame paciente={pacienteEncontrado} />
-              )}
+
+            {consulta && consulta.map(consulta => <CardConsulta consulta={consulta} key={consulta.id} />)}
+
+
+           
 
               </Styled.RenderResultados>
 
             <Styled.SubTitle>Exame</Styled.SubTitle>
 
               <Styled.RenderResultados>
+
+              {exame && exame.map(exame => <CardExame exame={exame} key={exame.id} />)}
+
+         
               </Styled.RenderResultados>
-
-
             </Styled.CorpoProntuario>
-
-
-
           </Styled.Prontuario>
 
           </>

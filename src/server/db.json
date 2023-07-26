@@ -172,24 +172,6 @@
   ],
   "consultas": [
     {
-      "motivo": "Dor de cabeça",
-      "dataConsulta": "2222-02-10",
-      "hora": "22:00",
-      "descProb": "Dorrr",
-      "medicacao": "Dipirona",
-      "dosagem": "muitas",
-      "id": 1
-    },
-    {
-      "motivo": "dasdad",
-      "dataConsulta": "2020-02-10",
-      "hora": "12:00",
-      "descProb": "dor no pe",
-      "medicacao": "rivotril",
-      "dosagem": "asdadada",
-      "id": 2
-    },
-    {
       "motivo": "Diarreia ",
       "dataConsulta": "2000-12-12",
       "hora": "10:00",
@@ -211,16 +193,6 @@
     }
   ],
   "exames": [
-    {
-      "exameNome": "HDL",
-      "dataExame": "2020-02-10",
-      "hora": "20:20",
-      "tipoExame": "Sangue",
-      "labExame": "Norte",
-      "urlExame": "http://localhost:3000/consultas",
-      "resultadoExame": "asdadsasd",
-      "id": 1
-    },
     {
       "exameNome": "Hemograma",
       "dataExame": "2222-02-22",
