@@ -1,5 +1,5 @@
 import * as Styled from './CardPaciente.style';
-import { ImUsers } from 'react-icons/im';
+import { ImUsers, ImUser } from 'react-icons/im';
 
 const CardPaciente = ({ paciente }) => {
 console.log(paciente)
@@ -7,7 +7,9 @@ console.log(paciente)
     <>
       <Styled.CardPacienteContainer>
         <Styled.RenderCardPaciente>
-          <Styled.IconCardPaciente/>
+          <Styled.IconCardPaciente>
+            <ImUser/>
+          </Styled.IconCardPaciente>
 
           <Styled.DadosPaciente>
             <Styled.Dados>{paciente.nome}</Styled.Dados>

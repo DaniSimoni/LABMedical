@@ -55,7 +55,7 @@ export const FormInput = styled.form`
 
 `
 
-export const AreaPaciente = styled.form`
+export const AreaPaciente = styled.div`
     display: flex;
     margin: 0;
 

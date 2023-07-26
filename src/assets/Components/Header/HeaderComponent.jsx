@@ -16,7 +16,7 @@ function NavBarHeader() {
           Nome do Usuário
         </Styled.TxtUser>
         <img
-          alt=""
+          alt="Imagem do usuário"
           src="../../../public/images/logoteste.jpg"
         />{' '}
       </Styled.UserHeader>

@@ -7,7 +7,7 @@ import HeaderComponent from './../assets/Components/Header/HeaderComponent';
 
 export const Layout = () => {
 
-
+    const render = () => {
 
     return (
         <Styled.App>
@@ -29,5 +29,7 @@ export const Layout = () => {
 
     {/*      <Styled.Footer></Styled.Footer> */}
         </Styled.App>
-    )
+    );
+}
+    return render()
 }

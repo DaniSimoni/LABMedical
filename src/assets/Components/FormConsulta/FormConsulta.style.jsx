@@ -78,7 +78,7 @@ export const ButtonDel = styled.button`
   width: ${({$width}) => $width ? $width : '95%'};
   border-radius: 0.3125rem;
   background: ${({ $outlined }) => { return $outlined ? 'transparent' : '#fff'}};
-  border:  ${({ $outlined }) => { return !$outlined ? '1px solid #FF0000' : '1px solid #FF0000'}};
+  border:  ${({ $outlined }) => { return !$outlined ? '1px solid #FF0000' : '1px solid #FF0001'}};
   color: ${({ $outlined }) => { return !$outlined ? '#FF0000' : 'rgba(82, 129, 220, 1)'}};
   font-size: 0.75rem;
   font-style: normal;

@@ -18,10 +18,10 @@ export const FormExame = ({paciente}) => {
 
 
 
-  const createExame = (ExameData) => {
-    ExameService.CreateExame(ExameData)
+  const createExame = (exameData) => {
+    ExameService.CreateExame(exameData)
       .then(response => {
-        console.log('Exame cadastrada com sucesso:', response);
+        console.log('Exame cadastrado com sucesso:', response);
         reset();
       })
       .catch(error => {
@@ -30,8 +30,8 @@ export const FormExame = ({paciente}) => {
   };
 
 
-  const deleteExame = (ExameData) => {
-    ExameService.DeleteExame(ExameData.id)
+  const deleteExame = (exameData) => {
+    ExameService.DeleteExame(exameData.id)
       .then(response => {
         console.log('Exame deletado com sucesso:', response);
         reset();
@@ -41,12 +41,12 @@ export const FormExame = ({paciente}) => {
       });
   };
 
-  const submitForm = async (ExameData) => {
-
-    const exame = await ExameService.CreateExame(ExameData);
+  const submitForm = async (exameData) => {
+    const data = {...exameData, pacienteId: paciente.id}
+    const exame = await ExameService.CreateExame(data);
 
     if (!exame) {
-      alert('Exame Cadastrada');
+      alert('Exame Cadastrado');
       reset();
 
     } else {
@@ -72,8 +72,8 @@ export const FormExame = ({paciente}) => {
         </Styled.SwitchBtn>
 
 
-        <Styled.ButtonDel $width={'10%'} onClick={createExame} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
-        <Styled.Button $width={'10%'} onClick={deleteExame} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
+        <Styled.ButtonDel $width={'10%'} $active={!errors.email && !errors.password} type='button' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
+        <Styled.Button $width={'10%'}  $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
       </Styled.Header>
 
 

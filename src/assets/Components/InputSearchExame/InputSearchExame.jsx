@@ -48,6 +48,7 @@ export const InputSearchExame = () => {
                 </Styled.FormInput>
 
                   <Styled.AreaPaciente>
+                    
             {pacienteEncontrado && (
               <FormExame paciente={pacienteEncontrado} />
               )}

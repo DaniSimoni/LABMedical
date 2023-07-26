@@ -20,7 +20,7 @@ export const ExamePage = () => {
     }, []);
     
     
-    const { auth } = useContext(AuthContext)
+
   
     const render = () => {
         return (
@@ -34,7 +34,8 @@ export const ExamePage = () => {
       )
     }
 
-    return auth.isLogged ? render() : <Navigate to={'.'}/>
+    return render()
+   /*   auth.isLogged ? render() : <Navigate to={'.'}/> */
     
   }
   

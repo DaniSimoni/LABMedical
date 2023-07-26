@@ -7,12 +7,7 @@ import { InputComponent } from '../Form/InputComponent/InputComponent';
 import { Switch } from 'antd';
 
 
-
-
-
 export const FormConsulta = ({paciente}) => {
-
- 
 
   const {
     register,
@@ -20,8 +15,6 @@ export const FormConsulta = ({paciente}) => {
     reset,
     formState: { errors },
   } = useForm()
-
-
 
   const createConsulta = (consultaData) => {
     ConsultaService.CreateConsulta(consultaData)
@@ -33,7 +26,6 @@ export const FormConsulta = ({paciente}) => {
         console.error('Erro ao cadastrar Consulta:', error);
       });
   };
-
 
   const deleteConsulta = (consultaData) => {
     ConsultaService.DeleteConsulta(consultaData.id)
@@ -47,8 +39,9 @@ export const FormConsulta = ({paciente}) => {
   };
 
   const submitForm = async (consultaData) => {
-
-    const consulta = await ConsultaService.CreateConsulta(consultaData);
+  
+    const data = {...consultaData, pacienteId: paciente.id}
+    const consulta = await ConsultaService.CreateConsulta(data);
 
     if (!consulta) {
       alert('Consulta Cadastrada');
@@ -59,8 +52,6 @@ export const FormConsulta = ({paciente}) => {
     }
 
   }
-
-
 
   return (
     <Styled.Form onSubmit={handleSubmit(submitForm)}>
@@ -77,9 +68,8 @@ export const FormConsulta = ({paciente}) => {
           <Switch /* defaultChecked={menu} onClick={() => setMenu(!menu)} onChange={onChange} */ />
         </Styled.SwitchBtn>
 
-
-        <Styled.ButtonDel $width={'10%'} onClick={deleteConsulta} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
-        <Styled.Button $width={'10%'} onClick={createConsulta} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
+        <Styled.ButtonDel $width={'10%'} $active={!errors.email && !errors.password} type='button' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
+        <Styled.Button $width={'10%'} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
       </Styled.Header>
 
 
@@ -99,7 +89,6 @@ export const FormConsulta = ({paciente}) => {
             }}
             error={errors.nome}
           />
-
 
           <InputComponent $width={'100%'}
             id='dataConsulta'
@@ -130,8 +119,9 @@ export const FormConsulta = ({paciente}) => {
           />
         </Styled.InputGroup>
 
-        <Styled.InputGroup  >
 
+
+        <Styled.InputGroup  >
           <InputComponent $height={'100px'}
             id='descProb'
             type='textarea'
@@ -148,9 +138,9 @@ export const FormConsulta = ({paciente}) => {
 
         </Styled.InputGroup>
 
+
+
         <Styled.InputGroup>
-
-
           <InputComponent $height={'70px'}
             id='medicacao'
             type='textarea'
@@ -164,12 +154,11 @@ export const FormConsulta = ({paciente}) => {
             }}
             error={errors.medicacao}
           />
-
         </Styled.InputGroup>
 
+
+
         <Styled.InputGroup>
-
-
           <InputComponent $height={'70px'}
             id='dosagem'
             type='textarea'
@@ -183,7 +172,6 @@ export const FormConsulta = ({paciente}) => {
             }}
             error={errors.dosagem}
           />
-
         </Styled.InputGroup>
       </Styled.MainForm>
     </Styled.Form>

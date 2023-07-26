@@ -19,16 +19,20 @@ export const RenderCardPaciente = styled.div`
     justify-content: space-around;
 `
 
-export const IconCardPaciente = styled.img`
+export const IconCardPaciente = styled.div`
     display: flex;
+    aling-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #F00;
     width: 3.5rem;
     height: 3.5rem;
     box-shadow: 5px 5px 10px gray;
     border-radius: 100%;
     margin: 1vw auto;
     border: 2px solid black;
-   /*  background-image:  ${({ $Icon }) => ($Icon ? $Icon : <ImUser/>)}; */
-    background-image:   <ImUser/>;
+    background: #FFF;
+  
 `
 
 export const DadosPaciente = styled.div`
