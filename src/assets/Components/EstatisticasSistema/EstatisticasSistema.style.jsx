@@ -2,22 +2,26 @@ import styled from 'styled-components';
 
 
 export const ContainerEstatisticas = styled.div`
-    width: 70vw;
+    width: 100%;
+    height: 30vh;
     box-shadow: none;
-    position: fixed;
-    margin: 5vw 0;
+    justify-content: center;
+    margin: 3% 0;
     color: gray;
+
+
+    h2{
+        margin-left: 6%
+    }
 
 `
 
 export const ContainerCardEstatisticas = styled.div`
     display: flex;
-    justify-content: space-between;
-    width: 70vw;
+    justify-content: space-around;
+    width: 100%;
     height: 12.5vw;
-
-
     border-radius: 5px;
-    margin-top: 1vw;
+    margin-top: 2vh;
 
 `

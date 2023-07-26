@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
-export const CriarConta = styled.h1`
+export const MainHome = styled.div`
   display: flex;
-  justify-content: center;
-  width: 40vw;
-  height: 3vw;
-  margin: 20vh auto;
+  flex-direction: column;
+  width: 100%;
+  height: 120vh;
+  margin: 0vh 5%;
   border-radius: 0.8rem;
-  background-color: rgba(82, 129, 220, 1);
-  color: white;
 `;

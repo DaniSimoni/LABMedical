@@ -18,13 +18,13 @@ const MenuAberto = () => {
         
         <Styled.MenuContainer >
               <Styled.MenuArea>
-            <Styled.MenuLogo src={'../../../../public/images/LABMedical_Logo.png'}/>
+            <Styled.MenuLogo src={'../../../../public/images/LABMedical_Logo.png'} alt='Logo LAB Medical'/>
 
-            <MenuItem Icon={FaHome} Text="INICIO" To='/'/>
+            <MenuItem Icon={FaHome} Text="INICIO" To='/' />
             <MenuItem Icon={FaSignInAlt} Text="SAIR" To='/login' />
 
             <MenuItem Icon={FaPlus} Text="CADASTRAR" To='/paciente' />
-            <MenuItem Icon={FaTasks} Text="LIMPAR PRONTUÁRIO" />
+            <MenuItem Icon={FaTasks} Text="LISTAR PRONTUÁRIO" To='/listaProntuarios'  />
 
             <MenuItem Icon={FaPlus} Text="CADASTRAR CONSULTA" To='/consulta' />
             <MenuItem Icon={FaPlus} Text="CADASTRAR EXAME" To='/exame' />

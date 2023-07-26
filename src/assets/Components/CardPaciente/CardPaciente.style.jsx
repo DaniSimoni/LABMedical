@@ -1,22 +1,22 @@
+import { ImUser } from 'react-icons/im';
 import styled from 'styled-components';
-import { ImUsers } from 'react-icons/im';
+
 
 export const CardPacienteContainer = styled.div`
-    width: 70vw;
-    height: 20vw;
-
-    position: absolute;
-
-    margin: 32vw auto 0 0vw;
+    display: flex;
+    justify-content: space-around;
+    width: 16vw;
+    height: 32vh;
+    margin: 4vw 0;
 `
 
 export const RenderCardPaciente = styled.div`
     width: 15vw;
     height: 17vw;
-    position: absolute;
     background-image: linear-gradient(to top, #fff 37%, #fff 37%, #fff 82.5%, #92a8d1 70%, #92a8d1 20%, #92a8d1 20%, #92a8d1 );
     border-radius: 5px;
     box-shadow: 3px 3px 3px gray;
+    justify-content: space-around;
 `
 
 export const IconCardPaciente = styled.img`
@@ -27,27 +27,17 @@ export const IconCardPaciente = styled.img`
     border-radius: 100%;
     margin: 1vw auto;
     border: 2px solid black;
-    background-image: url(<ImUsers/>);
-    background-color: white;
+   /*  background-image:  ${({ $Icon }) => ($Icon ? $Icon : <ImUser/>)}; */
+    background-image:   <ImUser/>;
+`
 
-/*     span{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-              
-                size: 10%;
-                margin: 0 auto;
-                border: 2px solid black;
+export const DadosPaciente = styled.div`
 
-                width: 4vw;
-                height: 4vw;
-                border: 2px solid black;
-                border-radius: 100%;
-            } */
-    img {
-                width: 3.2vw;
-                border-radius: 150%;
-                border: 1px solid red;
-            }
+`
 
+
+export const Dados = styled.p`
+    display: flex;
+    margin: 1vw;
+    justify-content: center;
 `

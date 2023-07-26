@@ -4,10 +4,7 @@ import  LogoTeste  from '../../../../public/images/logoteste.jpg'
 
 function CardEstatistica ({dataCard})  {
 
-/*   const getIcone = (icone) => {
-    swicth() {
-      case ''
-  } */
+
 
   return (
 

@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const AreaCadastro = styled.div`
   display: flex;
-  justify-content: center;
+  
   flex-direction: column;
   width: 100%;
   height: 100%;
-  margin: auto;
   color: white;
+  margin: 0 auto;
 `;
 
 
@@ -18,9 +18,10 @@ export const AreaPaciente = styled.div`
   width: 90%;
   height: 80%;
   color: white;
-  margin: 10vh auto 0 auto;
+  margin: 0;
   box-shadow: 5px 5px 10px gray;
   border-radius: 5px;
+  border: 5px solid black
 `;
 
 export const Title = styled.h1`
@@ -32,7 +33,8 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: normal;
   width: 100%;
-  margin: 0 5% -5% 5%;
+  margin: 2% 5%;
+
 `;
 
 export const Label = styled.legend`

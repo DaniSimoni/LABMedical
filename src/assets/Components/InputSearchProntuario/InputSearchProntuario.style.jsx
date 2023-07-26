@@ -2,21 +2,24 @@ import styled from 'styled-components';
 
 export const InputContainer = styled.div`
     display: block;
-    width: 100%;
-    height: 7vw;
+    width: 90%;
+    height: 8vw;
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 0 0 2% 0;
+  
 
 
     .container-faq {
     display: flex !important;
-    justify-content: center !important;
+    justify-content: left !important;
     margin: 0 auto 2vw !important;
+    
 }
 
-h2 {
+h4 {
     display: flex;
     color: gray;
+    
 }
 
 .inputFaq {
@@ -53,11 +56,9 @@ export const FormInput = styled.form`
 
 `
 
-export const CardRender = styled.div`
+
+export const AreaPaciente = styled.form`
     display: flex;
-    justify-content: space-around;
-    gap: 16px;
-    width: 100%;
-    height: 100%;
-    flex-wrap: wrap;
+    margin: 0;
+
 `

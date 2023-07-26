@@ -1,12 +1,14 @@
-import { createContext, useState } from 'react';
+import { useState } from "react";
 import PropTypes from "prop-types";
+
+ 
 
 
 export const CardEstatisticaContext = createContext({
     dataCard: {
         icone: '',
         resultado: '0',
-        legenda: 'Aguarde...',
+        legenda: '',
     },
     setData: () => {},
 });
@@ -20,7 +22,8 @@ export const CardEstatisticaProvider = ({ children }) => {
     });
 
     return(
-        <CardEstatistica.Provider value={{dataCard, setDataCard}}>
+        <CardEstatistica.Provider value={{dataCard, setDataCard}} >
+
          { children }
         </CardEstatistica.Provider>
     )

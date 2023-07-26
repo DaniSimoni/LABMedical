@@ -15,12 +15,13 @@ export const Layout = () => {
         <Styled.Sidebar>
             <MenuComponent/>
         </Styled.Sidebar>
-
+        
+         <Styled.Main>
             <Styled.Header>
                 <HeaderComponent></HeaderComponent>
             </Styled.Header>
-         <Styled.Main>
-
+         
+         
             <Styled.Content>
             <Outlet />
             </Styled.Content>

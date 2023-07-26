@@ -1,6 +1,6 @@
 import { LocalStorageService } from "./LocalStorage.server";
 
-const API_URL = 'http://localhost:3000/users'
+const API_URL = 'http://localhost:3000/exames'
 
 
 
@@ -13,7 +13,7 @@ const Get = async () => {
    }
 
 const Create = async(data) => {
-      const response = await fetch(API_URL, {
+    const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
             'Accept': 'aplication/json',
@@ -22,13 +22,13 @@ const Create = async(data) => {
         body: JSON.stringify(data),
     });
     const res = await response.json();
-    console.log(res && `Usuario ${data.email} criado com sucesso`);
+    console.log(res && `Paciente ${data.nome} criado com sucesso`);
 }
 
-const CreateUser = async(UserData) => {
+const CreateExame = async(ExameData) => {
     await fetch(API_URL, {
         method: "POST",
-        body: JSON.stringify(UserData),
+        body: JSON.stringify(ExameData),
         headers: {
           "Content-type": "application/json",
         },
@@ -36,7 +36,7 @@ const CreateUser = async(UserData) => {
         .then(async (data) => {
          const res = await data.json();
           console.log(res);
-          console.log("cadastrado com sucesso");
+          console.log("Consulta cadastrado com sucesso");
         })
         .catch((err) => {
           console.log(err);
@@ -60,13 +60,20 @@ const ShowByEmail = async (email) => {
     return data[0];
 }
 
-
-const Delete = (id) => {
-    LocalStorageService.set('users', Get().filter( user => user.id !== id));
+const ShowByNome = async (nome) => {
+    const filter = `?nome=${nome}`;
+    const response = await fetch(`${API_URL}/${filter}`);
+    const data = await response.json();
+    
+    return data;
 }
 
-const DeletePaciente = (id) => {
-    LocalStorageService.set('users', Get().filter( user => user.id !== id));
+const Delete = (id) => {
+    LocalStorageService.set('consultas', Get().filter( consultas => consultas.id !== id));
+}
+
+const DeleteExame = (id) => {
+    LocalStorageService.set('exames', Get().filter( exames => exames.id !== id));
 }
 
 
@@ -78,12 +85,14 @@ const Update = (id, newUser) => {
 
 
 
-export const UserService = {
+export const ExameService = {
     Get,
     Create,
-    CreateUser,
+    CreateExame,
     Show,
     ShowByEmail,
+    ShowByNome,
     Delete,
+    DeleteExame,
     Update
 }

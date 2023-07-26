@@ -1,4 +1,4 @@
-import * as Styled from './CadastroConsulta.style'
+import * as Styled from './ListaProntuario.style'
 
 import { useContext, useEffect } from 'react';
 import { HeaderContext } from '../../Context/Header.context';
@@ -6,17 +6,16 @@ import { HeaderContext } from '../../Context/Header.context';
 import { AuthContext } from '../../Context/Auth/auth.context';
 import { Navigate } from 'react-router-dom';
 
+import { InputSearchProntuario } from '../../Components/InputSearchProntuario/InputSearchProntuario';
 
-import {InputSearchConsulta} from '../../Components/InputSearchConsulta/InputSearchConsulta';
 
-
-export const ConsultaPage = () => {
+export const ListaProntuarioPage = () => {
   
   
   const { setData } = useContext(HeaderContext)
   useEffect(() => {
     setData({       
-      titulo: 'CADASTRO DE CONSULTA',}) 
+      titulo: 'LISTAGEM DE PRONTUÁRIOS',}) 
       
     }, []);
     
@@ -28,7 +27,7 @@ export const ConsultaPage = () => {
           <>
         <Styled.AreaCadastro>
             <Styled.Title>
-                  <InputSearchConsulta/>
+                <InputSearchProntuario/>
             </Styled.Title>
         </Styled.AreaCadastro>
           </>
@@ -38,6 +37,9 @@ export const ConsultaPage = () => {
     return auth.isLogged ? render() : <Navigate to={'.'}/>
     
   }
+  
+
+
   
 
 

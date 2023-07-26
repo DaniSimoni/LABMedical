@@ -1,28 +1,23 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 3rem;
   display: flex;
-
+  width: 100%;
+  height: 3rem;
+  justify-content: space-between;
   background-color: #4682B4; 
   box-shadow: 0 0 20px 3px;
-  position: absolute;
-  width: 100vw;
-  margin-left: 10em;
   color: white;
-
 `;
 
 export const UserHeader = styled.div`
-
     display: flex;
     align-items: center;
     width: 12rem;
-    margin-left: 0vw;
+    margin-right: 3%;
     padding: 0;
-    justify-content: right;
-
-
+    justify-content: space-between;
+    
 
 img{
   width: 2.5vw;
@@ -40,7 +35,7 @@ export const TxtHeader = styled.h3`
     display: flex;
     justify-content: left;
     width: 60vw;
-    margin: .5vw 0 0 17vw;
+    margin: .5vw 0 0 2vw;
     padding-left: 2vw;
     align-items: center;
 

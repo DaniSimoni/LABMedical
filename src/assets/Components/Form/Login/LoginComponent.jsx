@@ -21,12 +21,7 @@ export const FormLoginComponent = () => {
 
   const { setAuth } = useContext(AuthContext)
 
-  const createUser = () => {
-    UserService.Create({
-     email: '',
-     password: '', 
-    })
-  }
+
 
   const submitForm = async (data) => {
     const { email, password } = data;

@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-export const InputGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+export const SelectContainer = styled.div`
   width: ${({ $width }) => ($width ? $width : '100%')};
-`;
+
+`
+
 
 export const Label = styled.label`
   display: flex;
@@ -17,31 +16,20 @@ export const Label = styled.label`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  width: 80%;
+  width: 100%;
 
 `;
 
-export const InputContainer = styled.div`
-  display: flex;
-  justify-content: baseline;
-  justify-items: baseline;
-  flex-wrap: wrap;
-  gap: 2vw;
-  width: 100%;
- 
-`
-export const Input = styled.input`
+
+export const Select = styled.select`
   display: flex;
   padding: 0.3rem;
-  
   align-items: flex-start;
   align-self: stretch;
   border-radius: 0.2rem;
   border: 1px solid ${({$color}) => { return $color === 'danger' ? '#BE2E2E' : '#5281DC'}};
-  width: ${({ $width }) => ($width ? $width : '100%')};
-  height: ${({ $height }) => ($height ? $height : '100%')};
-
-  `;
+  width: 100%;
+`;
 
 export const TextArea = styled.textarea`
   display: flex;
@@ -50,8 +38,6 @@ export const TextArea = styled.textarea`
   align-self: stretch;
   border-radius: 0.3125rem;
   border: 1px solid ${({$color}) => { return $color === 'danger' ? '#BE2E2E' : '#5281DC'}};;
-  height: ${({ $height }) => ($height ? $height : '100%')};
-
 `;
 
 

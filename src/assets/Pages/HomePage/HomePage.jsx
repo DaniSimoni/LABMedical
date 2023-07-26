@@ -1,10 +1,11 @@
+import * as Styled from './HomePage.style'
 import { useContext, useEffect } from 'react';
 import { HeaderContext } from '../../Context/Header.context';
 import EstatisticasSistema from '../../Components/EstatisticasSistema/EstatisticasSistema';
-import { InputSearch } from '../../Components/InputSearch/InputSearch';
-import CardPaciente from '../../Components/CardPaciente/CardPaciente';
+import {InputSearch}  from '../../Components/InputSearch/InputSearch';
 import { AuthContext } from './../../Context/Auth/auth.context';
 import { Navigate } from 'react-router-dom';
+
 
 
 
@@ -24,9 +25,11 @@ export const HomePage = () => {
     const render = () => {
         return (
           <>
+          <Styled.MainHome>
             <EstatisticasSistema/>
             <InputSearch/>
-            <CardPaciente/>
+
+          </Styled.MainHome>
           </>
       )
     }

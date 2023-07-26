@@ -1,21 +1,55 @@
-import { React } from 'react';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import * as Styled from './InputSearch.style';
-
+import { PacienteService } from '../../../Service/User/Paciente.service';
+import CardPaciente from '../CardPaciente/CardPaciente';
 
 export const InputSearch = () => {
-    return (
-        <>
-            <Styled.InputContainer>
+ 
+    const {
+    register,
+    handleSubmit,
+    reset,
+  } = useForm();
 
-            <h2>Informações Rápidas de Pacientes</h2>
-                <Styled.FormInput>
-                <input className="input2  inputFaq" placeholder="Digite o nome do paciente"/>
+  const [pacienteEncontrado, setPacienteEncontrado] = useState(null);
 
-                <button className="botao "><span className="material-symbols-outlined">
-                    search</span></button>
-                </Styled.FormInput>
-            </Styled.InputContainer>
-           
-        </>
-    )
+  const submitInputForm = async (dataInput) => {
+    const { nome } = dataInput;
+    
+    const paciente = await PacienteService.ShowByNome(nome);
+    console.log(paciente)
+    
+      if (!paciente) {
+        alert('Usuário não cadastrado');
+        setPacienteEncontrado(null);
+        reset();
+      } else {
+        setPacienteEncontrado(paciente);
+        reset()
+      }
+  
+  };
+
+  return (
+    <>
+      <Styled.InputContainer>
+        <h2>Informações Rápidas de Pacientes</h2>
+        <Styled.FormInput onSubmit={handleSubmit(submitInputForm)}>
+          <input
+            className="input2 inputFaq"
+            placeholder="Digite o nome do paciente"
+            {...register('nome')}
+          />
+          <button className="botao" type="submit">
+            <span className="material-symbols-outlined">Buscar</span>
+          </button>
+        </Styled.FormInput>
+      </Styled.InputContainer>
+
+        <Styled.CardRender>
+            {pacienteEncontrado && pacienteEncontrado.map(paciente => <CardPaciente paciente={paciente} key={paciente.id} />)}
+        </Styled.CardRender>
+    </>
+  );
 };

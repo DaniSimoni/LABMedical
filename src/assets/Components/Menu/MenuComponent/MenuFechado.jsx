@@ -10,6 +10,8 @@ const MenuFechado = () => {
             <Styled.MenuFechado>
                 <Styled.MenuLogoFechado src={'../../../../public/images/LABMedical_Logo.png'} />
             </Styled.MenuFechado>
+
+            
         </>
     )
 }

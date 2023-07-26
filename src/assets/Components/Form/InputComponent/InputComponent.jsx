@@ -4,7 +4,7 @@ import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
 
 import * as Styled from './Input.style';
 
-export const InputComponent = ({ label, type, id, placeholder, register, error }) => {
+export const InputComponent = ({ label, type, id, placeholder, register, error, $width, $height }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPassword = () => {
@@ -12,12 +12,14 @@ export const InputComponent = ({ label, type, id, placeholder, register, error }
   }
 
   return(
-    <Styled.InputGroup>
+    <Styled.InputGroup $width={$width} $height={$height} >
       <Styled.Label $color={error && 'danger'} htmlFor={ id }>{ label }</Styled.Label>
 
       { type !== 'textarea' && 
         <Styled.InputContainer>
-          <Styled.Input
+          <Styled.Input 
+            $height={$height}
+            $width={$width}
             $color={error && 'danger'} 
             type={ showPassword ? 'text' : type } 
             id={ id } 
@@ -41,6 +43,7 @@ export const InputComponent = ({ label, type, id, placeholder, register, error }
 
       { type === 'textarea' &&
             <Styled.TextArea 
+            $height={$height}
             $color={error && 'danger'} 
             id={ id } 
             placeholder={ placeholder } 
@@ -57,4 +60,7 @@ InputComponent.propTypes = {
   placeholder: PropTypes.string,
   register: PropTypes.any,
   error: PropTypes.any,
+  $height: PropTypes.string,
+  $width: PropTypes.string,
+  $color: PropTypes.string,
 }
