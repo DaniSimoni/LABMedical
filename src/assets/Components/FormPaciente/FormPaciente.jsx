@@ -1,4 +1,5 @@
 import * as Styled from './FormPaciente.style';
+import { useState } from 'react';
 
 
 import { useForm } from 'react-hook-form';
@@ -7,11 +8,11 @@ import { PacienteService } from '../../../../src/Service/User/Paciente.service';
 import { Switch } from 'antd';
 
 import { SelectComponent } from '../Form/SelectComponent/SelectComponent';
-
+import { CEPService } from '../../../Service/User/User.CEP'
 
 
 export const FormPaciente = () => {
- 
+
   const genders = [
     {
       id: 1,
@@ -96,9 +97,24 @@ export const FormPaciente = () => {
       });
   };
 
+  const [endereco, setEndereco] = useState({});
+
+  const buscaCEP = async (data) => {
+    CEPService.Get(data)
+      .then(response => {
+        setEndereco('cidade', response.cidade)
+        setEndereco('uf', response.uf)
+        setEndereco('numRua', response.numRua)
+        setEndereco('bairro', response.bairro)
+      })
+
+   
+  };
+
   const submitForm = async (pacienteData) => {
 
-  const paciente = await PacienteService.CreatePaciente(pacienteData);  
+
+   const paciente = await PacienteService.CreatePaciente(pacienteData);
 
     if (!paciente) {
       alert('Novo Paciente Cadastrado');
@@ -338,6 +354,7 @@ export const FormPaciente = () => {
             placeholder='Informe o CEP'
             name='cep'
             label='CEP'
+            onBlur={handleCepBlur}
               register={{
            ...register('cep', {
               required: false,
@@ -352,6 +369,7 @@ export const FormPaciente = () => {
             placeholder='Digite a Cidade'
             name='cep'
             label='Cidade'
+            defaultValue={endereco.localidade || ''}
               register={{
            ...register('cidade', {
               required: false,
@@ -366,6 +384,7 @@ export const FormPaciente = () => {
             placeholder='Estado'
             name='uf'
             label='Estado'
+            defaultValue={endereco.uf || ''}
               register={{
            ...register('uf', {
               required: false,
@@ -385,6 +404,7 @@ export const FormPaciente = () => {
             placeholder='Informe seu endereço'
             name='rua'
             label='Logradouro'
+            defaultValue={endereco.logradouro || ''}
               register={{
            ...register('rua', {
               required: false,
@@ -399,6 +419,7 @@ export const FormPaciente = () => {
             placeholder='Número'
             label='Número'
             name='numRua'
+            defaultValue={endereco.numero || ''}
               register={{
            ...register('numRua', {
               required: false,
@@ -433,6 +454,7 @@ export const FormPaciente = () => {
             placeholder='Digite o seu bairro'
             name='bairro'
             label='Bairro'
+            defaultValue={endereco.bairro || ''}
               register={{
            ...register('bairro', {
               required: false,

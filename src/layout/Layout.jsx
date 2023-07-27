@@ -27,7 +27,7 @@ export const Layout = () => {
             </Styled.Content>
          </Styled.Main>
 
-    {/*      <Styled.Footer></Styled.Footer> */}
+
         </Styled.App>
     );
 }

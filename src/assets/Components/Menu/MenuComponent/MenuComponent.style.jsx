@@ -27,7 +27,7 @@ export const MenuArea = styled.div`
 
 export const MenuLogo = styled.img`
   width: 10vw;
-  margin: 4rem auto 4rem;
+  margin: 4rem auto 1.5rem;
 `
 
 
@@ -90,4 +90,8 @@ export const SwitchBtn = styled.div`
   padding-bottom: 4vh;
 `
 
+export const MenuSetor = styled.p`
+    margin-left: 12%;
+    color: #fff; 
+`
 

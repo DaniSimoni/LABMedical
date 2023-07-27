@@ -78,11 +78,13 @@ export const Title = styled.legend`
 `;
 
 
-export const LabelRecuperarSenha = styled.label`
+export const LabelRecuperarSenha = styled.button`
   display: flex;
     justify-content: center;
     width: 100%;
     color: #4682B4;
     font-size: .7rem;
+    border: none;
+    background-color: transparent;
   
 `;
