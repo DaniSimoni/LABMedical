@@ -53,39 +53,29 @@ export const ProntuarioPage = () => {
           
             <Styled.Prontuario>
             <Styled.HeaderProntuario>
-              <Styled.Title>Nome do Paciente {paciente?.nome}</Styled.Title>
-              <Styled.Label>Convênio: {paciente?.convenio}</Styled.Label>
-              <Styled.Label>Nacimento: {paciente?.nasc}</Styled.Label>
-              <Styled.Label>Contato: {paciente?.tel}</Styled.Label>
-
+                <Styled.Title>{paciente?.nome}</Styled.Title>
+                <Styled.Label>Convênio: {paciente?.convenio}</Styled.Label>
+                <Styled.Label>Nacimento: {paciente?.nasc}</Styled.Label>
+                <Styled.Label>Contato: {paciente?.tel}</Styled.Label>
             </Styled.HeaderProntuario>
 
             <Styled.CorpoProntuario>
 
-            <Styled.SubTitle>Consulta</Styled.SubTitle>
+            <Styled.SubTitle><span>1</span>Consulta</Styled.SubTitle>
 
               <Styled.RenderResultados>
-
-            {consulta && consulta.map(consulta => <CardConsulta consulta={consulta} key={consulta.id} />)}
-
-
-           
-
+                  {consulta && consulta.map(consulta => <CardConsulta consulta={consulta} key={consulta.id} />)}
               </Styled.RenderResultados>
 
-            <Styled.SubTitle>Exame</Styled.SubTitle>
+            <Styled.SubTitle><span>2</span>Exame</Styled.SubTitle>
 
               <Styled.RenderResultados>
-
-              {exame && exame.map(exame => <CardExame exame={exame} key={exame.id} />)}
-
-         
+                  {exame && exame.map(exame => <CardExame exame={exame} key={exame.id} />)}       
               </Styled.RenderResultados>
             </Styled.CorpoProntuario>
           </Styled.Prontuario>
 
           </>
-
       )
     }
 

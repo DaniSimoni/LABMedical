@@ -41,16 +41,15 @@ export const MenuFooter = styled.legend`
 
 export const MenuFechado = styled.div`
   display: flex;
-  width: 5rem;
+  width: 7rem;
   height: 100%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
   background-color: #4682B4;
 `;
 
 export const MenuLogoFechado = styled.img`
-  width: 4vw;
+  width: 6vw;
   margin: 2rem auto 4rem;
 `
 
@@ -60,7 +59,7 @@ export const MenuFooterFechado = styled.legend`
   justify-content: center;
   align-items: column;
   color: white;
-  margin: 2vh auto;
+  margin: 3vh auto;
   width: 5vw;
   font-size: .8vw;
 `

@@ -167,7 +167,7 @@ export const FormExame = ({paciente}) => {
             label='URL do Documento do Exame'
             register={{
               ...register('urlExame', {
-                required: true,
+                required: false,
               })
             }}
             error={errors.urlExame}
@@ -186,7 +186,7 @@ export const FormExame = ({paciente}) => {
             label='Resultado do Exame'
             register={{
               ...register('resultadoExame', {
-                required: false,
+                required: true,
               })
             }}
             error={errors.resultadoExame}

@@ -17,9 +17,7 @@ export const ConsultaPage = () => {
       
     }, []);
     
-    
-
-  
+      
     const render = () => {
         return (
           <>

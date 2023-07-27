@@ -110,20 +110,6 @@ export const FormPaciente = () => {
 
   }
 
-/*   const submitFormDel = async (pacienteData) => {
-
-  const delPaciente = await PacienteService.DeletePaciente(pacienteData);  
-
-  if (!delPaciente) {
-    alert('Paciente Deletado');
-    reset();
-  
-  } else {
-    alert('Paciente não deletado');
-  }
-
-} */
-
 
   return (
     <Styled.Form onSubmit={handleSubmit(submitForm)}>
@@ -137,7 +123,7 @@ export const FormPaciente = () => {
         </Styled.LabelSwitch>
 
         <Styled.SwitchBtn>
-          <Switch /* defaultChecked={menu} onClick={() => setMenu(!menu)} onChange={onChange} */ />
+          <Switch/>
         </Styled.SwitchBtn>
 
 
@@ -170,7 +156,7 @@ export const FormPaciente = () => {
             options={genders}
             register={{
               ...register('genero', {
-                required: false
+                required: true,
               })
             }}
             error={errors.genero}
@@ -184,7 +170,7 @@ export const FormPaciente = () => {
             label='Data Nascimento'
               register={{
            ...register('nasc', {
-              required: false,
+              required: true,
           })
             }}
             error={errors.nasc}
@@ -202,7 +188,7 @@ export const FormPaciente = () => {
             label='CPF'
               register={{
            ...register('cpf', {
-              required: false,
+              required: true,
           })
             }}
             error={errors.cpf}
@@ -216,7 +202,7 @@ export const FormPaciente = () => {
             label='RG'
               register={{
            ...register('rg', {
-              required: false,
+              required: true,
           })
             }}
             error={errors.rg}
@@ -229,7 +215,7 @@ export const FormPaciente = () => {
             options={estadoCivil}
             register={{
               ...register('genero', {
-                required: false
+                required: true
               })
             }}
             error={errors.estadoCivil}
@@ -247,7 +233,7 @@ export const FormPaciente = () => {
             label='Telefone'
               register={{
            ...register('tel', {
-              required: false,
+              required: true,
           })
             }}
             error={errors.tel}
@@ -261,7 +247,7 @@ export const FormPaciente = () => {
             label='E-mail'
               register={{
            ...register('email', {
-              required: false,
+              required: true,
           })
             }}
             error={errors.email}
@@ -275,7 +261,7 @@ export const FormPaciente = () => {
             label='Naturalidade'
               register={{
            ...register('natural', {
-              required: false,
+              required: true,
           })
             }}
             error={errors.natural}

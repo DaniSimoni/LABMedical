@@ -2,8 +2,10 @@ import * as Styled from './HeaderComponent.style';
 import React, { useContext } from 'react';
 import { HeaderContext } from '../../Context/Header.context';
 
-function NavBarHeader() {
+function NavBarHeader({user}) {
     const { data } = useContext(HeaderContext)
+
+     
 
   return (
     <Styled.Container>
@@ -13,7 +15,7 @@ function NavBarHeader() {
 
       <Styled.UserHeader>
         <Styled.TxtUser>
-          Nome do Usuário
+        {/*   {user.email} */} Esperando dados
         </Styled.TxtUser>
         <img
           alt="Imagem do usuário"

@@ -20,8 +20,6 @@ export const Header = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
-
-
   align-items: flex-start;
   gap: 0.5rem;
   align-self: stretch;
@@ -31,7 +29,6 @@ export const Header = styled.div`
 export const InputGroup = styled.div`
   display: flex;
   padding: 0.325rem;
-/*   flex-direction: column; */
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
@@ -146,8 +143,6 @@ export const SwitchBtn = styled.div`
   background-color: none;
   margin: auto;
 `
-
-
 
 export const MainForm = styled.div`
     display: flex;

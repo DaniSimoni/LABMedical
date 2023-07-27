@@ -3,6 +3,13 @@ import * as Styled from './EstatisticasSistema.style';
 import React, { useState, useEffect } from "react";
 import { ImUsers, ImCalendar, ImDroplet } from 'react-icons/im';
 
+import { 
+
+  FaLaptopMedical
+  
+
+} from 'react-icons/fa';
+
 function EstatisticasSistema() {
   const [pacientes, setPacientes] = useState([]);
   const [consultas, setConsultas] = useState([]);
@@ -61,7 +68,7 @@ function EstatisticasSistema() {
     },
     {
       id: '2',
-      icone: <ImCalendar/>,
+      icone: <FaLaptopMedical/>,
       resultado: totalConsultas(),
       legenda: 'Consultas',
     },

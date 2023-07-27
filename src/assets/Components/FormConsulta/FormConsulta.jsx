@@ -4,7 +4,7 @@ import { ConsultaService } from '../../../Service/User/Consulta.service';
 
 import { useForm } from 'react-hook-form';
 import { InputComponent } from '../Form/InputComponent/InputComponent';
-import { Switch } from 'antd';
+import { Switch, Spin } from 'antd';
 
 
 export const FormConsulta = ({paciente}) => {
@@ -53,6 +53,8 @@ export const FormConsulta = ({paciente}) => {
 
   }
 
+
+
   return (
     <Styled.Form onSubmit={handleSubmit(submitForm)}>
 
@@ -68,8 +70,8 @@ export const FormConsulta = ({paciente}) => {
           <Switch /* defaultChecked={menu} onClick={() => setMenu(!menu)} onChange={onChange} */ />
         </Styled.SwitchBtn>
 
-        <Styled.ButtonDel $width={'10%'} $active={!errors.email && !errors.password} type='button' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
-        <Styled.Button $width={'10%'} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
+        <Styled.ButtonDel $width={'10%'} $active={!errors.email && !errors.password} type='button' disabled={errors.email || errors.password} >Deletar</Styled.ButtonDel>
+        <Styled.Button  $width={'10%'} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
       </Styled.Header>
 
 
@@ -87,7 +89,7 @@ export const FormConsulta = ({paciente}) => {
                 required: true,
               })
             }}
-            error={errors.nome}
+            error={errors.motivo}
           />
 
           <InputComponent $width={'100%'}
@@ -101,7 +103,7 @@ export const FormConsulta = ({paciente}) => {
                 required: true,
               })
             }}
-            error={errors.nome}
+            error={errors.dataConsulta}
           />
 
           <InputComponent $width={'100%'}
@@ -115,7 +117,7 @@ export const FormConsulta = ({paciente}) => {
                 required: true,
               })
             }}
-            error={errors.nome}
+            error={errors.hora}
           />
         </Styled.InputGroup>
 
@@ -149,7 +151,7 @@ export const FormConsulta = ({paciente}) => {
             label='Medicação Receitada'
             register={{
               ...register('medicacao', {
-                required: true,
+                required: false,
               })
             }}
             error={errors.medicacao}
@@ -167,7 +169,7 @@ export const FormConsulta = ({paciente}) => {
             label='Dosagem e Precauções'
             register={{
               ...register('dosagem', {
-                required: false,
+                required: true,
               })
             }}
             error={errors.dosagem}

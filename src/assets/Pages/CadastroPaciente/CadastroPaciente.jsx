@@ -38,8 +38,7 @@ export const PacientePage = () => {
           </Styled.AreaCadastro>
       )
     }
-    return auth.isLogged ? render() : <Navigate to={'.'}/>
-    
+    return render()    
   }
   
 

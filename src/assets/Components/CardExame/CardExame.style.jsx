@@ -13,6 +13,6 @@ export const RenderResultados = styled.div`
   
   p {
     margin: 1% 2% 0% 2%;
-    background-color: #B0E0E6;
+    background-color: #ebf7f9;
   };
 `;

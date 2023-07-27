@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import * as Styled from './Select.style';
 
 export const SelectComponent = ({ label, error, name, info, options = [], $width }) => {

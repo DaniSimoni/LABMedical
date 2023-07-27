@@ -1,4 +1,3 @@
-import { ImUser } from 'react-icons/im';
 import styled from 'styled-components';
 
 
@@ -21,17 +20,17 @@ export const RenderCardPaciente = styled.div`
 
 export const IconCardPaciente = styled.div`
     display: flex;
-    aling-items: center;
+    align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    color: #F00;
+    font-size: 2.5rem;
+    color: #fff;
     width: 3.5rem;
     height: 3.5rem;
     box-shadow: 5px 5px 10px gray;
     border-radius: 100%;
     margin: 1vw auto;
-    border: 2px solid black;
-    background: #FFF;
+    border: 2px solid #fff;
+    background: #92a8d1;
   
 `
 
@@ -42,6 +41,14 @@ export const DadosPaciente = styled.div`
 
 export const Dados = styled.p`
     display: flex;
-    margin: 1vw;
+    margin: .5vw;
     justify-content: center;
+`
+
+
+export const DadosNome = styled.p`
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
 `

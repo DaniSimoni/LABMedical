@@ -3,12 +3,15 @@ import MenuItem from '../../MenuItem/MenuItem';
 
 import React from 'react'
 import { 
-
   FaHome, 
   FaSignInAlt,
   FaPlus,
   FaTasks,
+  FaLaptopMedical
+
 } from 'react-icons/fa';
+
+import { ImDroplet } from 'react-icons/im';
 
 const MenuAberto = () => {
 
@@ -26,8 +29,8 @@ const MenuAberto = () => {
             <MenuItem Icon={FaPlus} Text="CADASTRAR" To='/paciente' />
             <MenuItem Icon={FaTasks} Text="LISTAR PRONTUÁRIO" To='/listaProntuarios'  />
 
-            <MenuItem Icon={FaPlus} Text="CADASTRAR CONSULTA" To='/consulta' />
-            <MenuItem Icon={FaPlus} Text="CADASTRAR EXAME" To='/exame' />
+            <MenuItem Icon={FaLaptopMedical} Text="CADASTRAR CONSULTA" To='/consulta' />
+            <MenuItem Icon={ImDroplet} Text="CADASTRAR EXAME" To='/exame' />
         </Styled.MenuArea>
 
 

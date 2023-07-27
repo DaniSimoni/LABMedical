@@ -40,7 +40,7 @@ export const Input = styled.input`
   border: 1px solid ${({$color}) => { return $color === 'danger' ? '#BE2E2E' : '#5281DC'}};
   width: ${({ $width }) => ($width ? $width : '100%')};
   height: ${({ $height }) => ($height ? $height : '100%')};
-
+  
   `;
 
 export const TextArea = styled.textarea`
@@ -57,18 +57,13 @@ export const TextArea = styled.textarea`
 
 export const Icon = styled.button`
   position: absolute;
-  top: .7rem;
-  right: .7rem;
-
   cursor: pointer;
-
   background: transparent;
-  border: 0;
-  
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  margin: .5rem 13.3rem;
   color: ${({$color}) => { return $color === 'danger' ? '#BE2E2E' : '#5281DC'}};;
 `
 

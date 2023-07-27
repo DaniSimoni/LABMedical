@@ -177,19 +177,39 @@
       "hora": "10:00",
       "descProb": "dasdad",
       "medicacao": "adadad",
-      "dosagem": "",
+      "dosagem": "Muita",
       "pacienteId": 1,
       "id": 3
     },
     {
-      "motivo": "Diarreia ",
+      "motivo": "Queimadura",
       "dataConsulta": "2000-02-20",
       "hora": "10",
-      "descProb": "oi",
-      "medicacao": "oi",
-      "dosagem": "oi",
+      "descProb": "Queimou com agua",
+      "medicacao": "Emplasto",
+      "dosagem": "Poucos",
       "pacienteId": 1,
       "id": 4
+    },
+    {
+      "motivo": "Dor na perna",
+      "dataConsulta": "2222-02-22",
+      "hora": "2222",
+      "descProb": "Está mancando",
+      "medicacao": "",
+      "dosagem": "Mandei sentar",
+      "pacienteId": 1,
+      "id": 5
+    },
+    {
+      "motivo": "Nariz sangrando",
+      "dataConsulta": "1111-11-11",
+      "hora": "1111",
+      "descProb": "nariz sangrando",
+      "medicacao": "",
+      "dosagem": "nada",
+      "pacienteId": 1,
+      "id": 6
     }
   ],
   "exames": [
@@ -200,12 +220,12 @@
       "tipoExame": "Sangue",
       "labExame": "Norte",
       "urlExame": "http://localhost:3000/consultas",
-      "resultadoExame": "",
+      "resultadoExame": "deu ruim",
       "pacienteId": 4,
       "id": 2
     },
     {
-      "exameNome": "Hemograma",
+      "exameNome": "Sifilis",
       "dataExame": "2000-10-10",
       "hora": "10:00",
       "tipoExame": "Sangue",
@@ -216,13 +236,13 @@
       "id": 3
     },
     {
-      "exameNome": "dadsada",
+      "exameNome": "Cardiograma",
       "dataExame": "2222-02-22",
       "hora": "2020",
-      "tipoExame": "asdadasdd",
-      "labExame": "dasdadad",
+      "tipoExame": "Cardiograma direto",
+      "labExame": "LabSul",
       "urlExame": "http://localhost:3000/consultassdfsd",
-      "resultadoExame": "sdfsdfs",
+      "resultadoExame": "indeferido",
       "pacienteId": 1,
       "id": 4
     }

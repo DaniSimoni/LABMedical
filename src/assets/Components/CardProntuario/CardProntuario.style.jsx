@@ -41,9 +41,8 @@ export const Arrow = styled.button`
     justify-content: center;
     align-self: center;
     position: fixed;
-    margin: 0 0 0 60% ;
-    width: 4%;
-    height: 4%;
+    margin: 0 0 0 75% ;
+    font-size: 2rem;
     border: none;
     background-color: transparent;
     

@@ -12,7 +12,7 @@ console.log(paciente)
           </Styled.IconCardPaciente>
 
           <Styled.DadosPaciente>
-            <Styled.Dados>{paciente.nome}</Styled.Dados>
+            <Styled.DadosNome>{paciente.nome}</Styled.DadosNome>
             <Styled.Dados>{paciente.nasc}</Styled.Dados>
             <Styled.Dados>{paciente.tel}</Styled.Dados>
             <Styled.Dados>{paciente.convenio}</Styled.Dados>

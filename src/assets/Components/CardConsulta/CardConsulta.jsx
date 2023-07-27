@@ -10,11 +10,11 @@ function CardConsulta ({consulta})  {
   <Styled.RenderResultados>
 
     <p>Motivo: {consulta.motivo} </p>
-    <p>Data da Consulta: </p>
-    <p>Hora: </p>
-    <p>Descrição: </p>
-    <p>Medicação: </p>
-    <p>Dosagem: </p>
+    <p>Data da Consulta: {consulta.dataConsulta} </p>
+    <p>Hora: {consulta.hora} </p>
+    <p>Descrição: {consulta.descProb} </p>
+    <p>Medicação: {consulta.medicacao} </p>
+    <p>Dosagem: {consulta.dosagem} </p>
 
   </Styled.RenderResultados>
  

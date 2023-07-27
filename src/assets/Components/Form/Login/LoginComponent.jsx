@@ -22,18 +22,21 @@ export const FormLoginComponent = () => {
   const { setAuth } = useContext(AuthContext)
 
 
+/*   const [userLogado, setUserLogado] = useState(null); */
 
   const submitForm = async (data) => {
     const { email, password } = data;
 
-    /* const user = users.find(u => u.email === email); */
     const user = await UserService.ShowByEmail(email);  
+
 
     if(!user) {
       alert('Usuário não cadastrado');
       reset();
       return;
-    }
+    }/* else {
+      setUserLogado(user.email)
+    } */
 
     password === user.password
       ? redirectToHome(user)
@@ -41,12 +44,16 @@ export const FormLoginComponent = () => {
   }
 
   const redirectToHome = (user) => {
+
     setAuth({
       user,
       isLogged: true,
     })
     navigate('/')
   }
+
+
+
 
   return(
     <Styled.Form onSubmit={ handleSubmit(submitForm) }>
