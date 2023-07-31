@@ -1,7 +1,7 @@
-export const CEP_URL = 'viacep.com.br/ws/01001000/json/'
+export const CEP_URL = 'http://viacep.com.br/ws/cepConsulta/json/'
 
-const Get = async () => {
-    const response = await fetch(CEP_URL);
+const Get = async (cep) => {
+    const response = await fetch(CEP_URL.replace('cepConsulta', cep));
     const data = await response.json();
 
     return data;

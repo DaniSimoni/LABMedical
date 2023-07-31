@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const SelectContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
   width: ${({ $width }) => ($width ? $width : '100%')};
 
 `
@@ -9,7 +12,6 @@ export const SelectContainer = styled.div`
 export const Label = styled.label`
   display: flex;
   align-items: flex-start;
-  gap: 0.625rem;
   align-self: stretch;
   color: ${({$color}) => { return $color === 'danger' ? '#BE2E2E' : '#5281DC'}};
   font-size: 0.75rem;
@@ -23,7 +25,7 @@ export const Label = styled.label`
 
 export const Select = styled.select`
   display: flex;
-  padding: 0.3rem;
+  padding: 0.25rem;
   align-items: flex-start;
   align-self: stretch;
   border-radius: 0.2rem;
@@ -41,20 +43,4 @@ export const TextArea = styled.textarea`
 `;
 
 
-export const Icon = styled.button`
-  position: absolute;
-  top: .7rem;
-  right: .7rem;
-
-  cursor: pointer;
-
-  background: transparent;
-  border: 0;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: ${({$color}) => { return $color === 'danger' ? '#BE2E2E' : '#5281DC'}};;
-`
 

@@ -1,11 +1,13 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useContext} from 'react';
+import { useContext, useState} from 'react';
 
 import { InputComponent } from '../InputComponent/InputComponent';
 import * as Styled from './LoginComponent.style';
 import { AuthContext } from '../../../Context/Auth/auth.context';
 import { UserService } from '../../../../Service/User/User.service';
+
+import { Spin } from 'antd';
 
 export const FormLoginComponent = () => {
 
@@ -14,7 +16,7 @@ export const FormLoginComponent = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors },  
   } = useForm()
 
   const navigate = useNavigate();
@@ -53,7 +55,7 @@ export const FormLoginComponent = () => {
   }
 
 
-
+  const [isLoading, setIsLoading] = useState()
 
   return(
     <Styled.Form onSubmit={ handleSubmit(submitForm) }>
@@ -89,7 +91,7 @@ export const FormLoginComponent = () => {
         />
       </Styled.InputGroup>
 
-      <Styled.Button $active={ !errors.email && !errors.password } type='submit' disabled={ errors.email || errors.password }>Entrar</Styled.Button>
+      <Styled.Button onClick={() => setIsLoading(true)} $active={ !errors.email && !errors.password } type='submit' disabled={ errors.email || errors.password } > {isLoading ? <Spin/> : 'Entrar'} </Styled.Button>
 
       <Styled.Action>
           <Styled.LabelRecuperarSenha onClick={() => alert('Você receberá um e-mail para recuperar a sua senha')}>Esqueceu a senha?</Styled.LabelRecuperarSenha>
