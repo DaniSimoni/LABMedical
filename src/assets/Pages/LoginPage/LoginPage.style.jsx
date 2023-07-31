@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+  import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 export const Login = styled.div`
@@ -27,7 +27,7 @@ export const ImageLogin = styled.img`
   margin: 0 10vw;
 `
 
-export const FormLoginStyle = styled.form`
+/* export const FormLoginStyle = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +55,7 @@ export const FormLoginStyle = styled.form`
     text-align: start;
 
   }
-`
+` */
 
 export const LabelCriarConta = styled.div`
   display: flex;

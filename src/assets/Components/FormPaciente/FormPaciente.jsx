@@ -1,5 +1,5 @@
 import * as Styled from './FormPaciente.style';
-import { useState } from 'react';
+/* import { useState } from 'react'; */
 
 
 import { useForm } from 'react-hook-form';
@@ -8,7 +8,7 @@ import { PacienteService } from '../../../../src/Service/User/Paciente.service';
 import { Switch } from 'antd';
 
 import { SelectComponent } from '../Form/SelectComponent/SelectComponent';
-import { CEPService } from '../../../Service/User/User.CEP'
+/* import { CEPService } from '../../../Service/User/User.CEP' */
 
 
 export const FormPaciente = () => {
@@ -87,7 +87,7 @@ export const FormPaciente = () => {
   
 
  const deletePaciente = (pacienteData) => {
-    PacienteService.DeletePaciente(pacienteData.id)
+    PacienteService.DeletePaciente(pacienteData.nome)
       .then(response => {
         console.log('Paciente deletado com sucesso:', response);
         reset();
@@ -97,7 +97,7 @@ export const FormPaciente = () => {
       });
   };
 
-  const [endereco, setEndereco] = useState({});
+/*   const [endereco, setEndereco] = useState({});
 
   const buscaCEP = async (data) => {
     CEPService.Get(data)
@@ -109,7 +109,7 @@ export const FormPaciente = () => {
       })
 
    
-  };
+  }; */
 
   const submitForm = async (pacienteData) => {
 
@@ -143,7 +143,8 @@ export const FormPaciente = () => {
         </Styled.SwitchBtn>
 
 
-        <Styled.ButtonDel $width={'10%'} onClick={deletePaciente} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
+        <Styled.ButtonDel $width={'10%'} onClick={deletePaciente} $active={!errors.email && !errors.password} type='button' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
+       
         <Styled.Button $width={'10%'} onClick={createPaciente} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
       </Styled.Header>
 
@@ -354,7 +355,7 @@ export const FormPaciente = () => {
             placeholder='Informe o CEP'
             name='cep'
             label='CEP'
-            onBlur={handleCepBlur}
+            /* onBlur={buscaCEP} */
               register={{
            ...register('cep', {
               required: false,
@@ -369,8 +370,8 @@ export const FormPaciente = () => {
             placeholder='Digite a Cidade'
             name='cep'
             label='Cidade'
-            defaultValue={endereco.localidade || ''}
-              register={{
+/*             defaultValue={endereco.localidade || ''}
+ */              register={{
            ...register('cidade', {
               required: false,
           })
@@ -384,7 +385,7 @@ export const FormPaciente = () => {
             placeholder='Estado'
             name='uf'
             label='Estado'
-            defaultValue={endereco.uf || ''}
+            /* defaultValue={endereco.uf || ''} */
               register={{
            ...register('uf', {
               required: false,
@@ -404,7 +405,7 @@ export const FormPaciente = () => {
             placeholder='Informe seu endereço'
             name='rua'
             label='Logradouro'
-            defaultValue={endereco.logradouro || ''}
+            /* defaultValue={endereco.logradouro || ''} */
               register={{
            ...register('rua', {
               required: false,
@@ -419,7 +420,7 @@ export const FormPaciente = () => {
             placeholder='Número'
             label='Número'
             name='numRua'
-            defaultValue={endereco.numero || ''}
+            /* defaultValue={endereco.numero || ''} */
               register={{
            ...register('numRua', {
               required: false,
@@ -454,7 +455,7 @@ export const FormPaciente = () => {
             placeholder='Digite o seu bairro'
             name='bairro'
             label='Bairro'
-            defaultValue={endereco.bairro || ''}
+            /* defaultValue={endereco.bairro || ''} */
               register={{
            ...register('bairro', {
               required: false,

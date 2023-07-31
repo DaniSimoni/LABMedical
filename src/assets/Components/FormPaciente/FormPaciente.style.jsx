@@ -62,9 +62,10 @@ export const Button = styled.button`
   }
 `;
 
-
 Button.propTypes = {
-  $outlined: PropTypes.bool
+  $outlined: PropTypes.bool,
+  $width: PropTypes.any,
+  $active: PropTypes.any,
 }
 
 export const ButtonDel = styled.button`
@@ -92,7 +93,8 @@ export const ButtonDel = styled.button`
 `;
 
 ButtonDel.propTypes = {
-  $outlined: PropTypes.bool
+  $outlined: PropTypes.bool,
+  $width: PropTypes.any
 }
 
 export const Action = styled.div`

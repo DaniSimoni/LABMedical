@@ -22,7 +22,7 @@ export const MenuComponent = () => {
   return (
     <>
       {menu ? <MenuAberto /> : <MenuFechado />}
-      {/*           {menu ? menuAberto()  : menuFechado()} */}
+
 
   
 

@@ -12,27 +12,13 @@ const Get = async () => {
     return data;
    }
 
-const Create = async(data) => {
-
-    
-
-    const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-            'Accept': 'aplication/json',
-            'Content-Type': 'aplication/json',
-        },
-        body: JSON.stringify(data),
-    });
-    const res = await response.json();
-    console.log(res && `Paciente ${data.nome} criado com sucesso`);
-}
 
 const CreatePaciente = async(pacienteData) => {
     await fetch(API_URL, {
         method: "POST",
         body: JSON.stringify(pacienteData),
         headers: {
+
           "Content-type": "application/json",
         },
       })
@@ -76,7 +62,7 @@ const Delete = (id) => {
 }
 
 const DeletePaciente = (id) => {
-    LocalStorageService.set('users', Get().filter( user => user.id !== id));
+    LocalStorageService.set('users', Get().filter( user => user.name !== name));
 }
 
 

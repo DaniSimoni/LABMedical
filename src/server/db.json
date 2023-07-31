@@ -210,6 +210,16 @@
       "dosagem": "nada",
       "pacienteId": 1,
       "id": 6
+    },
+    {
+      "motivo": "Febre",
+      "dataConsulta": "2020-10-10",
+      "hora": "12:20",
+      "descProb": "Febre persistente",
+      "medicacao": "Dipirona",
+      "dosagem": "3x ao dia",
+      "pacienteId": 1,
+      "id": 7
     }
   ],
   "exames": [
@@ -245,6 +255,17 @@
       "resultadoExame": "indeferido",
       "pacienteId": 1,
       "id": 4
+    },
+    {
+      "exameNome": "HDL",
+      "dataExame": "2020-12-12",
+      "hora": "12:00",
+      "tipoExame": "Sangue",
+      "labExame": "Norte",
+      "urlExame": "",
+      "resultadoExame": "Aguardando.",
+      "pacienteId": 1,
+      "id": 5
     }
   ]
 }

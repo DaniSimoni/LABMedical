@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types'
 
 export const InputGroup = styled.div`
   display: flex;
