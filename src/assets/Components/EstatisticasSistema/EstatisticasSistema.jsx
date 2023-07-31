@@ -1,14 +1,9 @@
 import CardEstatistica from '../CardEstatistica/CardEstatistica';
 import * as Styled from './EstatisticasSistema.style';
 import React, { useState, useEffect } from "react";
-import { ImUsers, ImCalendar, ImDroplet } from 'react-icons/im';
+import { ImUsers, ImDroplet } from 'react-icons/im';
 
-import { 
-
-  FaLaptopMedical
-  
-
-} from 'react-icons/fa';
+import { FaLaptopMedical } from 'react-icons/fa';
 
 function EstatisticasSistema() {
   const [pacientes, setPacientes] = useState([]);

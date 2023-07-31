@@ -1,10 +1,10 @@
 import * as Styled from './FormExame.style';
-
+import { useState } from 'react';
 import { ExameService } from '../../../../src/Service/User/Exame.service';
 
 import { useForm } from 'react-hook-form';
 import { InputComponent } from '../Form/InputComponent/InputComponent';
-import { Switch } from 'antd';
+import { Switch, Spin } from 'antd';
 
 
 export const FormExame = ({paciente}) => {
@@ -55,6 +55,7 @@ export const FormExame = ({paciente}) => {
 
   }
 
+    const [isLoading, setIsLoading] = useState()
 
   return (
     <Styled.Form onSubmit={handleSubmit(submitForm)}>
@@ -73,7 +74,7 @@ export const FormExame = ({paciente}) => {
 
 
         <Styled.ButtonDel $width={'10%'} $active={!errors.email && !errors.password} type='button' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
-        <Styled.Button $width={'10%'}  $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
+        <Styled.Button onClick={() => setIsLoading(true)} $width={'10%'}  $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>{isLoading ? <Spin/> : 'Salvar'}</Styled.Button>
       </Styled.Header>
 
 
@@ -89,6 +90,8 @@ export const FormExame = ({paciente}) => {
             register={{
               ...register('exameNome', {
                 required: true,
+                minLenght: 5 ,
+                maxLenght: 50 ,
               })
             }}
             error={errors.exameNome}
@@ -135,6 +138,8 @@ export const FormExame = ({paciente}) => {
             register={{
               ...register('tipoExame', {
                 required: true,
+                minLenght: 5 ,
+                maxLenght: 30 ,
               })
             }}
             error={errors.tipoExame}
@@ -149,6 +154,8 @@ export const FormExame = ({paciente}) => {
             register={{
               ...register('labExame', {
                 required: true,
+                minLenght: 5 ,
+                maxLenght: 30 ,
               })
             }}
             error={errors.labExame}
@@ -187,6 +194,8 @@ export const FormExame = ({paciente}) => {
             register={{
               ...register('resultadoExame', {
                 required: true,
+                minLenght: 15 ,
+                maxLenght: 1000 ,
               })
             }}
             error={errors.resultadoExame}

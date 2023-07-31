@@ -3,8 +3,7 @@ import * as Styled from './CadastroPaciente.style'
 import { useContext, useEffect } from 'react';
 import { HeaderContext } from '../../Context/Header.context';
 
-/* import { InputComponent } from './../../Components/Form/InputComponent/InputComponent';
- */
+
 import { FormPaciente } from '../../Components/FormPaciente/FormPaciente';
 
 

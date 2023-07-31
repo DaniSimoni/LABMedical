@@ -76,7 +76,6 @@ const Update = (id, newUser) => {
 
 export const PacienteService = {
     Get,
-    Create,
     CreatePaciente,
     Show,
     ShowByEmail,

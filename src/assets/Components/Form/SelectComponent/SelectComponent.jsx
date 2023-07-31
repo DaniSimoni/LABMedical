@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import * as Styled from './Select.style';
 
-export const SelectComponent = ({ label, error, name, info, options = [], $width }) => {
+export const SelectComponent = ({ label, error, name, info, options = [], $width, register }) => {
     
   return (
 <Styled.SelectContainer $width={$width}>
     <Styled.Label htmlFor={name}>{label}</Styled.Label>
 
-    <Styled.Select $width={$width} id={name}>
+    <Styled.Select $width={$width} id={name} {...register}>
 
     <option value={null}>Selecione</option>
     { options.map( option => 
@@ -28,6 +28,7 @@ export const SelectComponent = ({ label, error, name, info, options = [], $width
 SelectComponent.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
+  register: PropTypes.any,
   options: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     value: PropTypes.any.isRequired,

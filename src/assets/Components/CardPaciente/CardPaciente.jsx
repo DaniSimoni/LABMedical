@@ -1,5 +1,5 @@
 import * as Styled from './CardPaciente.style';
-import { ImUsers, ImUser } from 'react-icons/im';
+import { ImUser } from 'react-icons/im';
 
 const CardPaciente = ({ paciente }) => {
 console.log(paciente)

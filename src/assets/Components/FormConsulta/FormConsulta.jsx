@@ -1,4 +1,5 @@
 import * as Styled from './FormConsulta.style';
+import { useState } from 'react'
 
 import { ConsultaService } from '../../../Service/User/Consulta.service';
 
@@ -53,7 +54,7 @@ export const FormConsulta = ({paciente}) => {
 
   }
 
-
+  const [isLoading, setIsLoading] = useState()
 
   return (
     <Styled.Form onSubmit={handleSubmit(submitForm)}>
@@ -71,7 +72,7 @@ export const FormConsulta = ({paciente}) => {
         </Styled.SwitchBtn>
 
         <Styled.ButtonDel $width={'10%'} $active={!errors.email && !errors.password} type='button' disabled={errors.email || errors.password} >Deletar</Styled.ButtonDel>
-        <Styled.Button  $width={'10%'} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
+        <Styled.Button onClick={() => setIsLoading(true)}  $width={'10%'} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>{isLoading ? <Spin/> : 'Salvar'}</Styled.Button>
       </Styled.Header>
 
 
@@ -87,6 +88,8 @@ export const FormConsulta = ({paciente}) => {
             register={{
               ...register('motivo', {
                 required: true,
+                minLenght: 6 ,
+                maxLenght: 60 ,
               })
             }}
             error={errors.motivo}
@@ -133,6 +136,8 @@ export const FormConsulta = ({paciente}) => {
             register={{
               ...register('descProb', {
                 required: true,
+                minLenght: 15 ,
+                maxLenght: 1000 ,
               })
             }}
             error={errors.descProb}
@@ -170,6 +175,8 @@ export const FormConsulta = ({paciente}) => {
             register={{
               ...register('dosagem', {
                 required: true,
+                minLenght: 15 ,
+                maxLenght: 250 ,
               })
             }}
             error={errors.dosagem}

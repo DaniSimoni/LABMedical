@@ -1,14 +1,14 @@
 import * as Styled from './FormPaciente.style';
-/* import { useState } from 'react'; */
+import { useEffect, useState } from 'react';
 
 
 import { useForm } from 'react-hook-form';
 import { InputComponent } from '../Form/InputComponent/InputComponent';
 import { PacienteService } from '../../../../src/Service/User/Paciente.service';
-import { Switch } from 'antd';
+import { Switch, Spin } from 'antd';
 
 import { SelectComponent } from '../Form/SelectComponent/SelectComponent';
-/* import { CEPService } from '../../../Service/User/User.CEP' */
+import { CEPService } from '../../../Service/User/User.CEP'
 
 
 export const FormPaciente = () => {
@@ -69,6 +69,8 @@ export const FormPaciente = () => {
     register,
     handleSubmit,
     reset,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm()
 
@@ -97,19 +99,19 @@ export const FormPaciente = () => {
       });
   };
 
-/*   const [endereco, setEndereco] = useState({});
-
-  const buscaCEP = async (data) => {
-    CEPService.Get(data)
+  
+  const buscaCEP = async () => {
+    CEPService.Get(watch("cep"))
       .then(response => {
-        setEndereco('cidade', response.cidade)
-        setEndereco('uf', response.uf)
-        setEndereco('numRua', response.numRua)
-        setEndereco('bairro', response.bairro)
+        console.log(response)
+        setValue('cidade', response.localidade)
+        setValue('uf', response.uf)
+        setValue('numRua', response.numRua)
+        setValue('bairro', response.bairro)
       })
 
    
-  }; */
+  };
 
   const submitForm = async (pacienteData) => {
 
@@ -126,6 +128,16 @@ export const FormPaciente = () => {
 
   }
 
+  useEffect(() => {
+    const cepPaciente = watch("cep") || ""
+    if(cepPaciente.length > 7) {
+         buscaCEP(cepPaciente)
+    }
+
+  
+  },[watch("cep")])
+
+  const [isLoading, setIsLoading] = useState()
 
   return (
     <Styled.Form onSubmit={handleSubmit(submitForm)}>
@@ -145,7 +157,7 @@ export const FormPaciente = () => {
 
         <Styled.ButtonDel $width={'10%'} onClick={deletePaciente} $active={!errors.email && !errors.password} type='button' disabled={errors.email || errors.password}>Deletar</Styled.ButtonDel>
        
-        <Styled.Button $width={'10%'} onClick={createPaciente} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>Salvar</Styled.Button>
+        <Styled.Button onClick={() => setIsLoading(true)} $width={'10%'} onSubmit={createPaciente} $active={!errors.email && !errors.password} type='submit' disabled={errors.email || errors.password}>{isLoading ? <Spin/> : 'Salvar'}</Styled.Button>
       </Styled.Header>
 
 
@@ -158,22 +170,25 @@ export const FormPaciente = () => {
             placeholder='Digite seu Nome'
             label='Nome Completo'
             name='nome'
+            
               register={{
            ...register('nome', {
               required: true,
+              minLenght: 5 ,
+              maxLenght: 50 ,
           })
             }}
             error={errors.nome}
           />
 
-          <SelectComponent $width={'10 %'}
+          <SelectComponent $width={'20%'}
             id='genero'
             name='genero'
             label={'Gênero'}
             options={genders}
             register={{
               ...register('genero', {
-                required: true,
+                   required: true,
               })
             }}
             error={errors.genero}
@@ -188,6 +203,7 @@ export const FormPaciente = () => {
               register={{
            ...register('nasc', {
               required: true,
+
           })
             }}
             error={errors.nasc}
@@ -206,6 +222,7 @@ export const FormPaciente = () => {
               register={{
            ...register('cpf', {
               required: true,
+             /*  required: false, */
           })
             }}
             error={errors.cpf}
@@ -220,6 +237,7 @@ export const FormPaciente = () => {
               register={{
            ...register('rg', {
               required: true,
+              maxLenght: 20 ,
           })
             }}
             error={errors.rg}
@@ -231,8 +249,9 @@ export const FormPaciente = () => {
             label={'Estado Civil'}
             options={estadoCivil}
             register={{
-              ...register('genero', {
-                required: true
+              ...register('estadoCivil', {
+                required: true,
+                
               })
             }}
             error={errors.estadoCivil}
@@ -244,13 +263,14 @@ export const FormPaciente = () => {
 
           <InputComponent $width={'100%'}
             id='tel'
-            type='phone'
+            type='number'
             placeholder='Telefone'
             name='tel'
             label='Telefone'
               register={{
            ...register('tel', {
               required: true,
+             /* required: false, */
           })
             }}
             error={errors.tel}
@@ -265,6 +285,7 @@ export const FormPaciente = () => {
               register={{
            ...register('email', {
               required: true,
+            /* required: false, */
           })
             }}
             error={errors.email}
@@ -279,6 +300,8 @@ export const FormPaciente = () => {
               register={{
            ...register('natural', {
               required: true,
+              minLenght: 5 ,
+              maxLenght: 50 ,
           })
             }}
             error={errors.natural}
@@ -355,11 +378,8 @@ export const FormPaciente = () => {
             placeholder='Informe o CEP'
             name='cep'
             label='CEP'
-            /* onBlur={buscaCEP} */
-              register={{
-           ...register('cep', {
-              required: false,
-          })
+                register={{
+           ...register('cep')
             }}
             error={errors.cep}
           />
@@ -368,10 +388,9 @@ export const FormPaciente = () => {
             id='cidade'
             type='string'
             placeholder='Digite a Cidade'
-            name='cep'
+            name='cidade'
             label='Cidade'
-/*             defaultValue={endereco.localidade || ''}
- */              register={{
+                       register={{
            ...register('cidade', {
               required: false,
           })
@@ -385,7 +404,7 @@ export const FormPaciente = () => {
             placeholder='Estado'
             name='uf'
             label='Estado'
-            /* defaultValue={endereco.uf || ''} */
+    
               register={{
            ...register('uf', {
               required: false,
@@ -405,7 +424,7 @@ export const FormPaciente = () => {
             placeholder='Informe seu endereço'
             name='rua'
             label='Logradouro'
-            /* defaultValue={endereco.logradouro || ''} */
+    
               register={{
            ...register('rua', {
               required: false,
@@ -420,7 +439,7 @@ export const FormPaciente = () => {
             placeholder='Número'
             label='Número'
             name='numRua'
-            /* defaultValue={endereco.numero || ''} */
+      
               register={{
            ...register('numRua', {
               required: false,
