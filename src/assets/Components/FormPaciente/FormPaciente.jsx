@@ -308,6 +308,53 @@ export const FormPaciente = () => {
           />
 
         </Styled.InputGroup>
+        <Styled.InputGroup>
+
+<InputComponent $width={'100%'}
+  id='emergencia'
+  type='text'
+  placeholder='Digite telefone'
+  name='emergencia'
+  label='Contato de Emergência'
+    register={{
+ ...register('emergencia', {
+    required: true,
+   /* required: false, */
+})
+  }}
+  error={errors.tel}
+/>
+
+<InputComponent $width={'100%'}
+  id='alergias'
+  type='text'
+  placeholder='Possui alergias? Cite quais.'
+  name='alergias'
+  label='Alergias'
+    register={{
+ ...register('alergias', {
+  required: false,
+})
+  }}
+  error={errors.email}
+/>
+
+<InputComponent $width={'100%'}
+  id='cuidados'
+  type='string'
+  placeholder='Digite os cuidados específicos'
+  name='cuidados'
+  label='Cuidados Específicos'
+    register={{
+ ...register('natural', {
+    required: false,
+})
+
+  }}
+  error={errors.natural}
+/>
+
+</Styled.InputGroup>
 
 
         <Styled.Header>
@@ -419,14 +466,14 @@ export const FormPaciente = () => {
         <Styled.InputGroup>
 
           <InputComponent $width={'500%'}
-            id='rua'
+            id='logradouro'
             type='string'
             placeholder='Informe seu endereço'
             name='rua'
-            label='Logradouro'
+            label='Endereço'
     
               register={{
-           ...register('rua', {
+           ...register('logradouro', {
               required: false,
           })
             }}
