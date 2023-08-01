@@ -6,9 +6,6 @@
 <p>A LAB Medical System executa o gerenciamento dos cadastros de Pacientes, Consultas, Exames e Prontuários, incluíndo e pesquisando as informações no banco de dados. </p>
 <p>A LAB Medical System fornece os dados em tempo real do número de pacientes, consultas e exames.</p>
 <p>_________________________________________________</p>
-<!-- <p>The Medical System Lab manages the records of doctors, nurses and patients by inserting, searching and changing the database. </p>
-<p>The Medical System API provides physicians' attendance record and patient status update when attended.</p>
-<p>_________________________________________________</p> -->
 
 
 <h2>Tecs:</h2>
@@ -37,8 +34,6 @@
 | react-router-dom | [https://www.npmjs.com/package/react-router-dom] |
 | styled-components | [https://styled-components.com/] |
 <p>_________________________________________________</p>
-
-
 
 
 <h2>Instalação/Installation </h2>
@@ -108,9 +103,10 @@ Nas pastas os arquivos estão separados conforme a sua função.
 
 <h2>Sugestões e Melhorias:</h2>
 
-- FrontEnd - A API pode receber um FrontEnd para melhorar a usabilidade;
-- Rotas - A API pode receber novas rotas e oferecer novas funcionalidades, por exemplo:
-     ```sh
-Aprimorar o sistema de deleção de dados do banco de dados, pois como está não é possível excluir por não haver uma tela de consulta aprimorada de exames, consultas, principalmente.
-     ```
+<p>Aprimorar o sistema de deleção de dados do banco de dados, pois como está não é possível excluir por não haver uma tela de consulta aprimorada de exames e consultas, principalmente.</p>
+
+<p>Criação da página para cadastro de novos usuários.</p>
+
+<p>Criação de sistema para recuperar senha de usuários.</p>
+
    
